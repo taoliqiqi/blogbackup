@@ -56,3 +56,101 @@ categories: "js"
 >**parseInt()** 适用于字符串
 >**parseFloat()** 适用于字符串
 >在使用parseInt(), parseFloat()，尽量使用“10”做第二个参数，代表**传进来**的第一个参数是用什么表示的。
+
+## 9.String
+>**转义字符** 长度1；\u03a3 长度1
+>**string()** 适用于任何类型
+
+<html><table class="tg"><tr><td class="tg-3xi5" rowspan="5">toString()</td><td class="tg-c6of">undefined, null没有该方法</td></tr><tr><td class="tg-c6of">number.toString(2~16的参数)转为对应进制的数字</td></tr><tr><td class="tg-c6of">number,bool,string,object都有该方法</td></tr></table></html>
+
+
+**Number(),Boolean(),String()相同点** 
+
+| Number(),Boolean(),String() |  |
+| --- | --- |
+|  都有同名函数，首字母大写|  |
+| 可转换任意数据类型 |  |
+|得到的结果都和自己对应  |  |
+|结果分成两类（对象传到String()里面，转换出带object的字符串  |  |
+
+
+| String() | new String() |
+| --- | --- |
+|  原生类型，一种内建函数|  转出object|
+
+**valueOf** 适用于Boolean,Number,String,Object
+
+## 10.Object
+>各种属性构成的无序集合，由键-值（包括**普通数据**、**对象**、**方法**）对组成
+
+
+| 原始数据类型 |  对象|
+| --- | --- |
+| 无属性 |有属性  |
+| 无方法| 有方法 |
+| 不可改变 | 可改变 |
+| 比较值 | 比较引用 |
+
+
+<html><table class="tg"><tr><td class="tg-3xi5" rowspan="5">对象分类</td><td class="tg-c6of">内部对象（17个）：常用对象（8个：bool,string,number,数组,Date,function,object,正则），错误对象，内置对象（Math,Global,Json：可不使用new)</td></tr><tr><td class="tg-c6of">数组对象（用得较多的是window,document)</td></tr><tr><td class="tg-c6of">自定义对象</td></tr></table></html>
+
+### 基础数据类型转为object
+```javascript
+bool -> object // {'原始值'： true}
+number -> object // {'原始值' ： 数字}
+string -> object //  {
+    '原始值' ：'abc',
+    'length'：3,
+    '0': 'a',
+    '1': 'b',
+    '2': 'c'
+}
+undefined/null -> object // {} （但是不能使用对象的方法）
+new Object(undefined) // {}
+new Object(null)  // {} (现在浏览器不报错，但是实际是不能转化)
+```
+
+### 创建对象的方法
+1. 对象直接量
+```javascript
+var obj = {
+    a: 123,
+    b: "hello"
+}
+```
+2. new Object() （括号可省略，不推荐这么使用）
+3. create方法（ES5）
+
+### 属性查询
+`obj.key` <=> `obj[key]`
+1. 先计算obj是否`undefined`或者`null`，是的话报错
+2. 先计算obj是否对象，不是，转对象
+3. 是对象后，若是`.`操作，把`.`后属性对应的值返回；若是`[]`操作，先计算括号内内容，转字符串，然后返回字符串的值
+4. 找不到值，返回`undefined`
+
+**`object -> 数字` 先valueOf(), 再toString()；**
+
+**`object -> 字符串` 先toString(), 再valueOf()**
+
+```javascript
+[]（转换）->数字（先valueOf()) -> [](再toString()) -> "" (再转数字) -> 0
+{}（转换）->数字（先valueOf()) -> {}(再toString()) -> "[object object]" (再转数字) -> NaN
+object -> bool //全是true
+Array -> toString() // 逗号组合项的字符串
+function -> toString() //源代码
+日期 -> toString() //日期时间组合字符串
+valueOf(): 有原始值，返回值；无原始值，返回object本身（Date除外，返回至1970年以来的毫秒数）
+```
+
+## 11. 表达式
+> `1+1` 两个1是表达式， + 是操作符
+
+1. 原始表达式 **常量、变量、直接量、关键字**
+2. 初始化表达式 **对象、数组**
+3. 函数表达式
+4. 函数调用表达式
+5. 属性访问表达式 **. []**
+6. new对象创建表达式
+
+## 12.一元操作符
+>只能操作一个值的操作符
