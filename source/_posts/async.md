@@ -1,11 +1,11 @@
 ---
-title: Javascript数据类型
+title: 8张图看清 async、await 和 promise 的执行顺序
 date: 2018-12-14 09:27:04
 tags:
 	- 面试
 categories: "async"
 ---
-
+>[原文链接](https://mp.weixin.qq.com/s?__biz=MzA5NzkwNDk3MQ==&mid=2650588676&idx=1&sn=dfbc649186ac49d37a2febb280d441d3&chksm=8891d620bfe65f36b2be7166499da5f769fd2ee1b6d9d7e267a955707ffd6c5d62d859fb7450&mpshare=1&scene=1&srcid=1212JLhO2ohKJjTzDCE2ZYyJ&key=13671e9bf917d50185994fbfe3db645c7ebf4667a381b88709227d671c9fa472c02ce8132503537a7eca1fda92f2ca58ea925e929530cc8f71b7f7dd59e434c3b14f72cf17a8811a816255b7066693c3&ascene=0&uin=MTA3MzgwOTg2Mg%3D%3D&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.14+build(18A391)&version=12020110&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=2gQlwVbgFZZtQg1qDP%2BTWRrdcEviXdK2Tg9cpnyg4lw%3D)
 ## 测试一下自己有没有必要看
 ### 先来一道烂大街的「今日头条」的面试题 
 ```javascript
